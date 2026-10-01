@@ -1,0 +1,20 @@
+generator client { provider = "prisma-client-js" }
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+model Section {
+  id            String @id
+  courseCode    String
+  courseName    String
+  sectionNumber String
+  instructor    String
+  day           String
+  startTime     String
+  endTime       String
+  room          String
+  capacity      Int
+  enrolled      Int
+  joinRate      Int
+  color         String @default("#2563eb")
+}
